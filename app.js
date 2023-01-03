@@ -52,10 +52,7 @@ start.onclick = () => {
 	guide.style.display = 'block';
 }
 
-exit.onclick = () => {
-	start.style.display = 'block';
-	guide.style.display = 'none';
-}
+exit.onclick = () => window.location.reload();
 
 // creating timer for quiz once continue is clicked
 
@@ -145,10 +142,7 @@ next_question.onclick = () => {
 	interval = setInterval(countDown, 1000);
 };
 
-quit.onclick = () => {
-	result.style.display = 'none';
-	start.style.display = 'block';
-}
+quit.onclick = () => window.location.reload();
 
 startAgain.onclick = () => {
 	result.style.display = 'none';
