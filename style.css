@@ -3,7 +3,7 @@
 Fonts
 ===============
 */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins|FilsonPro:400,700&display=swap");
 
 /*
 =============== 
@@ -43,8 +43,8 @@ Variables
 	--clr-green-dark: hsl(125, 67%, 44%);
 	--clr-green-light: hsl(125, 71%, 66%);
 	--clr-black: #222;
-	--ff-primary: "Roboto", sans-serif;
-	--ff-secondary: "Open Sans", sans-serif;
+	--ff-primary: "FilsonPro", sans-serif;
+	--ff-secondary: "Poppins", sans-serif;
 	--transition: all 0.3s linear;
 	--spacing: 0.06rem;
 	--radius: 0.25rem;
@@ -95,7 +95,6 @@ body {
 	border-radius: 30px 10px;
 	border: 2px solid #b0c4d8;
 	cursor: pointer;
-	/*display: none;*/
 }
 
 #start:hover {
@@ -105,14 +104,13 @@ body {
 
 #guide,
 #quiz {
+	display: none;
 	height: auto;
-	width: 96%;
-	margin-left: 2%;
+	width: 310px;
 	padding: 10px;
 	background: #e7f1fa;
 	border-radius: 30px 10px;
 	border: 1px solid #b0c4d8;
-	display: none;
 }
 
 #guide h2 {
@@ -152,8 +150,7 @@ body {
 /* quiz section */
 
 #quiz {
-	/* display: block !important; */
-	height: 480px;
+	height: 440px;
 	position: relative;
 }
 
@@ -173,7 +170,7 @@ body {
 
 #quiz #quiz_header h5 {
 	color: #ff5235;
-	font-size: 1.15rem;
+	font-size: 0.9rem;
 }
 
 #quiz #quiz_header #timer {
@@ -205,7 +202,7 @@ h6:not(#time) {
 
 #quiz #question {
 	position: absolute;
-	top: 90px;
+	top: 85px;
 	display: flex;
 }
 
@@ -214,20 +211,19 @@ h6:not(#time) {
 }
 
 #quiz #optionList {
-	height: 400px;
 	width: 100%;
 	position: absolute;
-	top: 145px;
+	top: 150px;
 }
 
 #quiz #optionList h4 {
-	line-height: 3;
+	line-height: 2.5;
 	width: 93%;
 	background: #ff5235;
 	overflow: hidden;
 	margin: 7px 0px;
 	border-radius: 7px;
-	padding: 0 20px;
+	padding: 0 10px;
 	border: 2px solid #b0c4d8;
 	cursor: pointer;
 }
@@ -269,7 +265,9 @@ h6:not(#time) {
 #quiz #answersSection h3:last-child {
 	background: #e7f1fa;
 	color: #ff5235;
-	padding: 5px 10px;
+	width: 100px;
+	text-align: center;
+	padding: 5px 0;
 	border-radius: 10px;
 	border: 3px solid #b0c4d8;
 	cursor: pointer;
@@ -283,9 +281,9 @@ h6:not(#time) {
 /* results */
 
 #container #result {
-	height: 500px;
-	width: 450px;
-	padding: 0px;
+	height: 400px;
+	width: 300px;
+	text-align: center;
 	background: #e7f1fa;
 	border-radius: 30px 10px;
 	border: 1px solid #b0c4d8;
@@ -295,17 +293,16 @@ h6:not(#time) {
 }
 
 #container #result i {
-	font-size: 150px;
+	font-size: 120px;
 	color: #e91e3a;
 	position: absolute;
-	top: 30px;
+	top: 20px;
 	width: 100%;
 	display: grid;
 	place-items: center;
 }
 
 #container #result h6 {
-	/* height: 40px; */
 	width: 100%;
 	margin-left: 0;
 	position: absolute;
@@ -321,7 +318,6 @@ h6:not(#time) {
 #container #result button {
 	height: 45px;
 	width: 90%;
-	margin: 10px;
 	outline: none;
 	background: #ff5235;
 	color: #e7f1fa;
@@ -330,19 +326,27 @@ h6:not(#time) {
 	cursor: pointer;
 	text-transform: capitalize;
 	position: absolute;
-	bottom: 100px;
-	left: 3%;
+	bottom: 70px;
+	left: 50%;
+	translate: -50%;
 }
 
 #container #result button:last-child {
-	bottom: 40px;
+	bottom: 20px;
 }
 
 #container #result button:hover {
 	background: #e91e3a;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 450px) {
+	#guide,
+	#quiz, #container #result {
+		width: 480px;
+	}
+}
+
+@media screen and (min-width: 620px) {
 	h2 {
 		font-size: 2rem;
 	}
@@ -364,9 +368,13 @@ h6:not(#time) {
 	}
 
 	#guide,
-	#quiz {
+	#quiz, #container #result {
 		width: 580px;
 		padding: 20px;
 		margin: 0;
+	}
+
+	button {
+		width: 200px !important;
 	}
 }
